@@ -80,8 +80,8 @@ if(op==="+"){
 else if(op==="x"){
     return [op1*op2,"multiply"];
 }
-else if(op==="-"){
-    return[op1-op2,"subtract"];
+else if(op==="-"){  
+    return[op1-op2,"subtract"]; 
 }
 else if(op==="/"){
     return [op1/op2,"division"];
@@ -112,8 +112,8 @@ document.getElementById('operator').textContent= "+" ;
 
 }
 function dispalySubtractQuestion(operand1,operand2){
-    document.getElementById('operand1').textContent=operand1;
-    document.getElementById('operand2').textContent=operand2;
+    document.getElementById('operand1').textContent=operand1>operand2 ? operand1 : operand2 ;
+    document.getElementById('operand2').textContent=operand1>operand2 ? operand2 : operand1;
     document.getElementById('operator').textContent= "-" ;
 }
 function displayMultiplyQuestion(operand1,operand2){
@@ -122,7 +122,7 @@ function displayMultiplyQuestion(operand1,operand2){
     document.getElementById('operator').textContent= "x" ;
 }
 function dispalyDivisionQuestion(operand1,operand2){
-    document.getElementById('operand1').textContent=operand1;
-    document.getElementById('operand2').textContent=operand2;
+    document.getElementById('operand1').textContent=operand1>operand2 ? operand1 : operand2 ;
+    document.getElementById('operand2').textContent=operand1>operand2 ? operand2 : operand1;
     document.getElementById('operator').textContent= "/" ;
 }
