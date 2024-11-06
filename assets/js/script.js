@@ -34,7 +34,17 @@ let num1=Math.floor(Math.random()*25)+1;
 let num2=Math.floor(Math.random()*25)+1;
 if(gameType==="addition"){
     dispalyAdditionQuestion(num1,num2);
-}else {
+}
+else if(gameType==="multiply"){
+    displayMultiplyQuestion(num1,num2);
+}
+else if(gameType==="subtract"){
+    dispalySubtractQuestion(num1,num2);
+}
+else if(gameType==="division"){
+    dispalyDivisionQuestion(num1,num2);
+}
+else {
     alert("Unknown game type:${gameType}");
     throw `Unknown game type: ${gameType}.aborting!`;
 }
@@ -66,7 +76,17 @@ let op=document.getElementById("operator").innerText;
 let result;
 if(op==="+"){
     return [op1+op2,"addition"];
-}else {
+}
+else if(op==="x"){
+    return [op1*op2,"multiply"];
+}
+else if(op==="-"){
+    return[op1-op2,"subtract"];
+}
+else if(op==="/"){
+    return [op1/op2,"division"];
+}
+else {
     alert(`Unimplemented operator ${op}`);
     throw`Unimplemented operator ${op}.Aborting!`;
 }
@@ -91,9 +111,18 @@ document.getElementById('operator').textContent= "+" ;
 
 
 }
-function dispalySubtractQuestion(){
-
+function dispalySubtractQuestion(operand1,operand2){
+    document.getElementById('operand1').textContent=operand1;
+    document.getElementById('operand2').textContent=operand2;
+    document.getElementById('operator').textContent= "-" ;
 }
-function displayMultiplyQuestion(){
-    
+function displayMultiplyQuestion(operand1,operand2){
+    document.getElementById('operand1').textContent=operand1;
+    document.getElementById('operand2').textContent=operand2;
+    document.getElementById('operator').textContent= "x" ;
+}
+function dispalyDivisionQuestion(operand1,operand2){
+    document.getElementById('operand1').textContent=operand1;
+    document.getElementById('operand2').textContent=operand2;
+    document.getElementById('operator').textContent= "/" ;
 }
