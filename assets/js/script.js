@@ -21,6 +21,11 @@ for(let button of buttons){
         }
     })
 }
+document.getElementById('answer-box').addEventListener("keydown",function(event){
+    if(event.key==="Enter"){
+        checkAnswer();
+    }
+})
 runGame("addition");
 })
 
@@ -29,9 +34,13 @@ runGame("addition");
  */
 
 function runGame(gameType){
+    document.getElementById('answer-box').value="";
+    // curse be already in the answer box when game is loaded
+    document.getElementById('answer-box').focus();
     // Create 2 random numbers between 1 and 25
 let num1=Math.floor(Math.random()*25)+1;
 let num2=Math.floor(Math.random()*25)+1;
+
 if(gameType==="addition"){
     dispalyAdditionQuestion(num1,num2);
 }
